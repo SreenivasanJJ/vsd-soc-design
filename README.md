@@ -300,8 +300,10 @@ We can observe there is no timing violation.
 The area is increased.
 
 Floorplan and placement is run
- 
- 
+ ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/4dd56def-6f83-49be-9a71-57f79be893fb)
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/8014df79-5490-4084-b4f7-e06bcfb22b85)
+ ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/998aa334-1999-4a80-be99-1269dae2e1db)
+
  
 OpenSTA for Post Timing Analysis
 
