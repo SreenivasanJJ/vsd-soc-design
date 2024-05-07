@@ -1,7 +1,5 @@
 # vsd-soc-design
 
-https://github.com/SreenivasanJJ/vsd-soc-design/blob/main/README.md#directory-structure
-
 ## Day 1
 
 <details>
