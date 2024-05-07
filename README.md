@@ -1,5 +1,8 @@
 # vsd-soc-design
-Directory Structure
+
+## Day 1
+
+### Directory Structure
 pdk used is skywater 130 pdk tool which is open source pdk.
 
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/85082815-7a0f-4bf5-8722-f63188cf5bfb)
@@ -24,7 +27,7 @@ The Default configuration for the flow is present in the following directory.
  
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/8e796bac-1501-4d7b-8555-af30cbe7bb29)
 
-**Design Setup**
+### **Design Setup**
 ‘docker’ is used for running the flows.
 
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/f2e4e87b-5649-4344-af29-56db54687426)
@@ -50,7 +53,7 @@ config.tcl
 
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/63884d4e-5686-4513-87d3-a3f04799b1d3)
 
-**Synthesis**
+### **Synthesis**
 
 Synthesis related variables
 
@@ -75,7 +78,7 @@ Synthesized netlist
 
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/771278e9-b9ff-4f25-b3ca-12eb3a956026)
 
-**Floorplan **
+### **Floorplan**
 
 Various Floorplan configurations that can be changed 
 
@@ -128,7 +131,9 @@ The highlighted cell is in metal 3
 
 The standard cell are placed in the corner of the floor plan.
 
-**Placement**
+## Day 2
+
+### **Placement**
 
 _“run_placement”_
 
@@ -148,9 +153,9 @@ All the standard cells are placed and the DRC reports as No error.
 
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/077d8309-09f8-4f20-bd31-2e71b473e5fd)
 
-**Day 3**
+## Day 3
 
-Changing the configuration in runtime
+### Changing the configuration in runtime
 
 We can see that the IO is placed equividistantly in the floorplan. This is due to IO_MODE Configuration
 
@@ -160,7 +165,7 @@ We are changing the value to 2. It will not be equidistant anymore
 
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/a6ba5955-0a84-4644-925d-20c6a232c7f8)
 
-**NGSPICE**
+### **NGSPICE**
 
 Creating standard cell design by cloning it from github.
 
@@ -205,7 +210,7 @@ Modifying the Cload to 2fF
 
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/7e3a2ada-9061-443f-abd0-ccbcb393f4f1)
 
-**Characterization **
+**Characterization**
 
 20% of 3.3V is 0.66V. The value of time is 
 
@@ -229,7 +234,7 @@ Fall propagation delay is 0.025ns
 
  ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/530cb6ec-26f2-4218-b079-1bd88f48aa2d)
 
-**Instruction for Magic DRC Tool usage**
+### **Instruction for Magic DRC Tool usage**
 
 Download from the web 
 _wget http://opencircuitdesign.com/open_pdks/archive/drc_tests.tgz_
@@ -283,11 +288,11 @@ We find the DRC in the selected area.
  
 Vendor DRC rule
 
- ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/0a040cd9-f3a4-4903-b96f-e8955076c270)
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/0a040cd9-f3a4-4903-b96f-e8955076c270)
 
 Finding missing or incorrect rules
  
- ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/b003a5cb-453d-4880-9973-df6eb202c6c7)
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/b003a5cb-453d-4880-9973-df6eb202c6c7)
  
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/4da088f5-d93d-4c65-98d9-a9660a2f8e6c)
 
@@ -295,15 +300,18 @@ Finding missing or incorrect rules
 
  
 On changing to drc full we can obsere the DRC failure
- ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/62efcdc9-800e-4876-a392-d02fca49b723)
+
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/62efcdc9-800e-4876-a392-d02fca49b723)
+
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/a3ebc7d9-b6ba-4e4e-8950-0985e6ce4bd0)
  
-**Day 4**
+## Day 4
 
 We need to extract lef file from mag file. Then this will be used in our picorv32 model replacing the standard cell inverter.
+
 _tracks.info_ which is used in the routing 
 
- ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/717dc020-a055-4975-8847-4d9ad1937b19)
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/717dc020-a055-4975-8847-4d9ad1937b19)
  
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/dd8b1830-1a8c-4f26-b921-744ebcfd47a0)
  
@@ -319,17 +327,17 @@ It is 3 grid width
 
 For LEF file we need to define the ports. Now applying the port to it
 
- ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/819e73b2-806c-4235-8dad-ee65ba571cf6)
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/819e73b2-806c-4235-8dad-ee65ba571cf6)
  
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/b52558d3-0d8b-4ee8-a9de-5ada0b7221bb)
 
 The mag file is saved in a separate file and lef is generated.
 
- ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/45876297-ebb2-40cf-b4f9-87bb4f40dc89)
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/45876297-ebb2-40cf-b4f9-87bb4f40dc89)
  
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/24ef730e-98b0-479d-b96d-1032af0ece9b)
  
-Generated LEF file 
+**Generated LEF file** 
 
  ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/26b0dd55-74b1-40af-aef4-4778063cb3af)
 
@@ -355,19 +363,20 @@ The current chip area is
  
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/6529720b-4fed-47b6-b415-964758c10613)
 
- ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/563f0e72-6b28-4a89-a68b-0db0e4093f7c)
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/563f0e72-6b28-4a89-a68b-0db0e4093f7c)
  
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/3bb3f32c-800d-40f0-9ea1-1cb10c31936f)
 
  
 We can observe the synth strategy is AREA so the area is optimized. BUFFERING is already present and sizing can be increased to improve timing.
+
 The synth sizing is set to 1 and strategy is set to DELAY to optimize delay.
 
- ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/d9f593f5-d6c1-46a5-9caf-c030ffb1a213)
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/d9f593f5-d6c1-46a5-9caf-c030ffb1a213)
 
 We can observe there is no timing violation.
  
- ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/ed7ddbe9-4c27-4ba8-afb5-5392a03f77fa)
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/ed7ddbe9-4c27-4ba8-afb5-5392a03f77fa)
  
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/ea16b890-fe46-4bf3-9591-58163ddb9de4)
 
@@ -380,7 +389,7 @@ Floorplan and placement is run
 
  ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/998aa334-1999-4a80-be99-1269dae2e1db)
  
-**OpenSTA for Post Timing Analysis**
+### **OpenSTA for Post Timing Analysis**
 
 Creating pre_sta.conf file and my_base.sdc file
 
@@ -409,7 +418,9 @@ Placement is performed with the generated netlist.
 
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/99151403-43ea-49c7-8869-ae711306085d)
 
-**Clock Tree Synthesis**
+## Day 5
+
+### **Clock Tree Synthesis**
 
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/ff673c8b-82be-48d3-8bec-b9f66129eff5)
 
@@ -429,7 +440,7 @@ OpenSTA is already integrated into the openroad. Thus openroad in invoked.
 
 We can observe both Setup slack and hold slack is met. This is not a proper analysis as the CTS is only for typical lib. 
 
-**Typical Corner : **
+**Typical Corner:**
 
 Hold:
 
@@ -451,7 +462,7 @@ We can also observe clkbuf_2 is used.
 
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/adce62c7-4b03-4586-937f-27f42f5f249a)
 
-**Creating Power Distribution Network**
+### **Creating Power Distribution Network**
 
 _gen_pdn_ – runs the pdn.
 
@@ -459,7 +470,7 @@ The std cell row is placed with 2.72 um distance. This has to in multiples of th
 
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/9ff32e47-164b-490a-add7-02a9e9a06cb7)
 
-**Routing **
+### **Routing**
 
 The Routing uses the TritonRouting.
 
