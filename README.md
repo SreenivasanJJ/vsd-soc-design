@@ -305,5 +305,52 @@ Floorplan and placement is run
  ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/998aa334-1999-4a80-be99-1269dae2e1db)
 
  
-OpenSTA for Post Timing Analysis
+**OpenSTA for Post Timing Analysis**
+Creating pre_sta.conf file and my_base.sdc file
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/2ba50779-6942-446d-8e99-85edde1c2c41)
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/1830ed94-9bd4-46f5-a48d-ed81fbdc4e88)
+Now Running STA “sta pre_sta.conf”
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/eeea3166-2b9f-46cc-8dff-95ef263460d9)
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/5c5c5213-f792-460d-a945-c3513829694c)
+The fanout is huge as the fanout value used is 6 so we reduce it to 4. The Total negative slack has reduced a bit but wns is still not changed much.
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/1be42c33-107e-4def-8632-c7889781b104)
+The cells that consume higher delay are changed to have bigger cell. By this we have achieved to reduce the wns.
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/2d222759-14b6-40ac-b1ea-2619736e18bc)
+“write_verilog” command is used to write it into a file. We overwrite this to the current synthesis file.
+Placement is performed with the generated netlist.
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/d9bcd454-af8b-41e0-bbdd-281d82b1c4f7)
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/99151403-43ea-49c7-8869-ae711306085d)
 
+Clock Tree Synthesis
+
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/ff673c8b-82be-48d3-8bec-b9f66129eff5)
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/1269e7b0-703e-417d-be3d-e855b9f1cd54)
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/e2a27ebc-a196-4268-8672-d18d8137c2ef)
+The limitation of TritonCTS is that is optimized to provide clock tree only for the typical library and does not include all the corners.
+
+**Performing Timing Analysis with Clock Tree**
+OpenSTA is already integrated into the openroad. Thus openroad in invoked.
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/26a48ce4-4fc8-4cfd-8248-4c2852052f20)
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/7616b9c1-77da-48f4-acd6-2d8387a05e28)
+
+We can observe both Setup slack and hold slack is met. This is not a proper analysis as the CTS is only for typical lib. 
+**Typical Corner : **
+Hold:
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/c9429709-a6fe-44b8-80e8-015a26be46c1)
+Setup:
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/b6836e72-b203-4af9-869e-5f69f66bf864)
+The Clock Buffer 1 is replaced and then the CTS is rerun.
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/e51210df-2865-475e-8149-b5f445da6df2)
+The setup slack has improved a bit. 
+We can also observe clkbuf_2 is used.
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/0525330f-c78d-4188-83bc-1f9f75a0d010)
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/adce62c7-4b03-4586-937f-27f42f5f249a)
+**Creating Power Distribution Network**
+gen_pdn – runs the pdn.
+The std cell row is placed with 2.72 um distance. This has to in multiples of the std cell height otherwise it cannot be placed.
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/9ff32e47-164b-490a-add7-02a9e9a06cb7)
+
+**Routing **
+The Routing uses the TritonRouting.
+To execute we run the command : run_routing
+![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/ca862dc0-2221-4865-93cf-05a0e2fb92d8)
