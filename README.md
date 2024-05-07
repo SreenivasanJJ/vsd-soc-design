@@ -1,6 +1,7 @@
 # vsd-soc-design
 
 ## Day 1
+<details>
 
 ### Directory Structure
 pdk used is skywater 130 pdk tool which is open source pdk.
@@ -130,9 +131,10 @@ The highlighted cell is in metal 3
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/7f0a44f4-ce1d-4018-84cf-5f2282db3067)
 
 The standard cell are placed in the corner of the floor plan.
-
+</details>
 ## Day 2
 
+<details>
 ### **Placement**
 
 _“run_placement”_
@@ -152,9 +154,10 @@ Half parameter wire length (HPWL) is used in the openlane. Reduction iof this is
 All the standard cells are placed and the DRC reports as No error.
 
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/077d8309-09f8-4f20-bd31-2e71b473e5fd)
-
+</details>
 ## Day 3
 
+<details>
 ### Changing the configuration in runtime
 
 We can see that the IO is placed equividistantly in the floorplan. This is due to IO_MODE Configuration
@@ -304,8 +307,9 @@ On changing to drc full we can obsere the DRC failure
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/62efcdc9-800e-4876-a392-d02fca49b723)
 
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/a3ebc7d9-b6ba-4e4e-8950-0985e6ce4bd0)
- 
+ </details>
 ## Day 4
+<details>
 
 We need to extract lef file from mag file. Then this will be used in our picorv32 model replacing the standard cell inverter.
 
@@ -417,9 +421,10 @@ Placement is performed with the generated netlist.
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/d9bcd454-af8b-41e0-bbdd-281d82b1c4f7)
 
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/99151403-43ea-49c7-8869-ae711306085d)
-
+</details>
 ## Day 5
-
+<details>
+ 
 ### **Clock Tree Synthesis**
 
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/ff673c8b-82be-48d3-8bec-b9f66129eff5)
@@ -478,3 +483,4 @@ To execute we run the command :_ run_routing_
 
 ![image](https://github.com/SreenivasanJJ/vsd-soc-design/assets/56498597/ca862dc0-2221-4865-93cf-05a0e2fb92d8)
 
+</details>
